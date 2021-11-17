@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  Profession: <%= @profession.name %>
+</h2>
+<h3> Rating: <%= @profession.rating %></h5>
+<h3> Created At: <%= @profession.created_at.to_formatted_s(:long_ordinal) %></h6>
+
+<%= link_to 'Edit', edit_profession_path(@profession) %> |
+<%= link_to 'Back', professions_path %>

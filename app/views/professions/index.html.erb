@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Professions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professions.each do |profession| %>
+      <tr>
+        <td><%= profession.name %>
+        <td><%= profession.rating %>
+        <td><%= link_to 'Show', profession %></td>
+        <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
+        <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profession', new_profession_path %>
+<hr>
+<%= link_to 'Users', users_path %>

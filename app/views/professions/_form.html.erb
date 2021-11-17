@@ -1,0 +1,29 @@
+<%= form_with(model: profession) do |form| %>
+  <% if profession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profession.errors.count, "error") %> prohibited this profession from being saved:</h2>
+
+      <ul>
+        <% profession.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, id: 'name', required: true %>
+  </div>
+  <br>
+
+  <div>
+    <%= form.label :rating, "Rating" %>
+    <%= form.number_field :rating, id: 'rating' %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

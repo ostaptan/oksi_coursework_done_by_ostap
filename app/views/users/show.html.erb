@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  User: <%= @user.email %>
+</h2>
+<h3> Experience: <%= @user.experience %></h5>
+<h3> Created At: <%= @user.created_at.to_formatted_s(:long_ordinal) %></h6>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
